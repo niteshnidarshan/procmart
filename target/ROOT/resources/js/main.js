@@ -69,20 +69,12 @@ $(document).on('submit', '#customer-form', function(e) {
         
         
         if(input.attr("name") == 'dob')
-    	{alert(input.attr("name")+" | "+(Date.parse(input.val())));
+    	{
         	customer[input.attr("name")] = Date.parse(input.val());
     	}
         customer[input.attr("name")] = input.val();
         delete customer["undefined"];
-    });
-    
-    /*var customer = {
-    	      "firstName" : "Ram",
-    	      "lastName" :"G"
-    	   }
- */
-   // data["type"] = parseInt(data["type"]);
-   // data["category"] = parseInt(data["category"]);
+    }); 
 
     //alert(JSON.stringify(dataa));
     // alert(frm.attr('action'));
@@ -92,11 +84,13 @@ $(document).on('submit', '#customer-form', function(e) {
 		url : "customer/persist",
 		data : JSON.stringify(customer),
 		dataType : 'json',				
-		success : function(data) {
-			$('#dataDiv').html(JSON.stringify(data)); 
+		success : function(d) {
+			window.alert("we are in success of doAjaxPost method : ");
+			$('#dataDiv').html(d);
+		},
+		error: function(e){
+			window.alert(" we got an error : "); 
+			console.log(e);
 		}
-	});
-
-       
-    
+	}); 
 });

@@ -3,9 +3,8 @@
 /Users/niteshnidarshan/git/procmart/src/main/java/com/aws/codestar/projecttemplates/configuration/ApplicationConfig.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/controller/RootAppController.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/aws/codestar/projecttemplates/configuration/MvcConfig.java
+/Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/dao/CustomerDAO.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/dao/ProductDAO.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/aws/codestar/projecttemplates/HelloWorldAppInitializer.java
-/Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/controller/JsonRequestController.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/model/Customer.java
 /Users/niteshnidarshan/git/procmart/src/main/java/com/aws/codestar/projecttemplates/controller/HelloWorldController.java
-/Users/niteshnidarshan/git/procmart/src/main/java/com/proc/kart/model/Employee.java

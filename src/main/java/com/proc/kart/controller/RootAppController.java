@@ -1,9 +1,8 @@
 package com.proc.kart.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.proc.kart.dao.CustomerDAO;
 import com.proc.kart.dao.ProductDAO;
 import com.proc.kart.model.Customer;
 import com.proc.kart.model.Product;
@@ -23,7 +23,10 @@ import com.proc.kart.model.Product;
 public class RootAppController {
  
 	 @Autowired
-	 ProductDAO dao;
+	 ProductDAO productDao;
+	 
+	 @Autowired
+	 CustomerDAO customerDao;
 	 
 	 @RequestMapping("product/{pid}")
 	 public ModelAndView getProduct(@PathVariable("pid") int pid) {
@@ -31,7 +34,7 @@ public class RootAppController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("product");
 		
-		Product product = dao.getProduct(pid);
+		Product product = productDao.getProduct(pid);
 		mv.addObject("product",product);
 		return mv;
 	 }
@@ -43,12 +46,22 @@ public class RootAppController {
 		 return mv;
 	 }
 	 
-	 @RequestMapping(value = "customer/persist", method = RequestMethod.POST, produces = "application/json")
-	 public @ResponseBody Customer  registerCustomer(@RequestBody Customer customer) {
-		 System.out.println(customer); 
+	 @RequestMapping(value = "customer/persist", method = RequestMethod.POST)
+	 public ModelAndView registerCustomer(@RequestBody Customer customer) {
 		 
+		 int result = customerDao.persistCustomer(customer);
 		 
-		 return customer;
+		 Customer persitedCustomer = customerDao.getCustomer(result);
+		 ModelAndView mv = new ModelAndView();
+		 
+		 if(result > 0)
+			 mv.addObject("message", "Success!"+persitedCustomer);
+		 else 
+			 mv.addObject("message", "Failed!");
+		 mv.setViewName("message");
+		 
+		 return mv;
+
 	 }
 	 
 }

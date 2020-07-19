@@ -56,7 +56,6 @@ function customerRegisterResponse(){
 	}
 }
 */
-
 $(document).on('submit', '#customer-form', function(e) {
     var frm = $('#customer-form');
     e.preventDefault();
@@ -69,21 +68,13 @@ $(document).on('submit', '#customer-form', function(e) {
         
         
         if(input.attr("name") == 'dob')
-    	{alert(input.attr("name")+" | "+(Date.parse(input.val())));
+    	{
         	customer[input.attr("name")] = Date.parse(input.val());
     	}
         customer[input.attr("name")] = input.val();
         delete customer["undefined"];
-    });
-    
-    /*var customer = {
-    	      "firstName" : "Ram",
-    	      "lastName" :"G"
-    	   }
- */
-   // data["type"] = parseInt(data["type"]);
-   // data["category"] = parseInt(data["category"]);
-
+    }); 
+alert(4);
     //alert(JSON.stringify(dataa));
     // alert(frm.attr('action'));
     $.ajax({
@@ -91,12 +82,13 @@ $(document).on('submit', '#customer-form', function(e) {
 		contentType : "application/json",
 		url : "customer/persist",
 		data : JSON.stringify(customer),
-		dataType : 'json',				
+		//dataType : 'json', //Enable this if response from server is in JSON & use JSON.stringify(data) in success block 			
 		success : function(data) {
-			$('#dataDiv').html(JSON.stringify(data)); 
+			$('#dataDiv').html(data); 
+		},
+		error: function(e){
+			window.alert(" we got an error... "); 
+			console.log(e);
 		}
-	});
-
-       
-    
+	}); 
 });

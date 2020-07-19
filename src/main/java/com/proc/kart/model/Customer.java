@@ -1,16 +1,30 @@
-package com.proc.kart.model;
- 
+package com.proc.kart.model; 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+@Entity 
 public class Customer{
 
+	@Id
+	@GenericGenerator(name = "cid", strategy = "sequence")
+	@GeneratedValue(generator = "cid") 
+	private int id;
+	
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	
-	@JsonFormat(pattern="dd-MM-yyyy")
+	@JsonFormat
 	private Date dob;
 	private String email;
 	private String password;
@@ -25,6 +39,14 @@ public class Customer{
 	private String zip;
 	private String landmark;
 	
+	
+	 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -111,10 +133,10 @@ public class Customer{
 	}
 	@Override
 	public String toString() {
-		return "Customer [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + ", email="
-				+ email + "]";
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
-	
+	 
+	 
 	
 	
 }

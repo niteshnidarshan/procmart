@@ -3,7 +3,7 @@
 		  <div class="form-row">
 		    <div class="form-group col-md-4">
 		      <label for="fName">First Name</label>
-		      <input type="text" class="form-control" id="fName" name = "firstName" required>
+		      <input type="text" class="form-control" id="fName" name = "firstName"  >
 		    </div>
 		    <div class="form-group col-md-4">
 		      <label for="mName">Middle Name</label>
@@ -11,37 +11,37 @@
 		    </div>
 		    <div class="form-group col-md-4">
 		      <label for="lName">Last Name</label>
-		      <input type="text" class="form-control" id="lName" name="lastName" required>
+		      <input type="text" class="form-control" id="lName" name="lastName"  >
 		    </div>
 		  </div> 
 		
 		  <div class="form-row">
 		  	<div class="form-group col-md-2">
 		      <label for="dateOfBirth">Date of Birth</label>
-			  <input class="form-control" type="text" id="dateOfBirth" name="dob">
+			  <input class="form-control" type="date" id="dateOfBirth" name="dob">
 			</div> 
 		    <div class="form-group col-md-4">
 		      <label for="inputEmail">Email as User Name</label>
-		      <input type="email" class="form-control" id="inputEmail" name="email" required>
+		      <input type="email" class="form-control" id="inputEmail" name="email"  >
 		    </div>
 		    <div class="form-group col-md-3">
 		      <label for="inputPassword">Password for ProcKart</label>
-		      <input type="password" class="form-control" id="inputPassword" name="password" required>
+		      <input type="password" class="form-control" id="inputPassword" name="password"  >
 		    </div>
 		    <div class="form-group col-md-3">
 		      <label for="confirmPassword">Confirm Password</label>
-		      <input type="password" class="form-control" id="confirmPassword" name="password" required>
+		      <input type="password" class="form-control" id="confirmPassword" name="password"  >
 		    </div>
 		  </div>
 		  
 		  <div class="form-row">
 		    <div class="form-group col-md-6">
 		      <label for="phone1">Phone #</label>
-		      <input type="text" value="10"  class="form-control" id="phone1" name="phone1" required>
+		      <input type="text" value="10"  class="form-control" id="phone1" name="phone1"  >
 		    </div>
 		    <div class="form-group col-md-6">
 		      <label for="phone2">Alternate Phone #</label>
-		      <input type="text" value="10"  class="form-control" id="phone2" name="phone2" required>
+		      <input type="text" value="10"  class="form-control" id="phone2" name="phone2"  >
 		    </div>
 		  </div>
 		  

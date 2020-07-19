@@ -18,7 +18,7 @@
 		  <div class="form-row">
 		  	<div class="form-group col-md-2">
 		      <label for="dateOfBirth">Date of Birth</label>
-			  <input class="form-control" type="text" id="dateOfBirth" name="dob">
+			  <input class="form-control" type="date" id="dateOfBirth" name="dob">
 			</div> 
 		    <div class="form-group col-md-4">
 		      <label for="inputEmail">Email as User Name</label>

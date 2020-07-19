@@ -19,15 +19,32 @@
 		<script src="resources/js/main.js"></script>
 	    <link href="resources/css/main.css" rel="stylesheet"> 
 	    
-<!-- 	    <link href="resources/css/jquery.datepick.css" rel="stylesheet"> -->
-<!-- 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-<!-- 		<script src="resources/js/jquery.plugin.min.js"></script> -->
-<!-- 		<script src="resources/js/jquery.datepick.js"></script> -->
-<!-- 		<script> -->
-<!--  		$(function() { -->
-<!--  			$('#dateOfBirth').datepick();  -->
-<!--  		});  -->
-<!-- 		</script> -->
+	    
+<!-- 	     jQuery -->
+<!-- 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+		
+<!-- 		<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap --> 
+<!-- 		<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> -->
+		
+		<!-- Bootstrap Date-Picker Plugin -->
+<!-- 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script> -->
+<!-- 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> -->
+			    
+	    
+	    <script>
+   /* $(document).ready(function(){
+      var date_input=$('input[name="dob"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })*/
+</script>
+	     
 	</head>
 	<body>
 		<!-- The sidebar -->
@@ -42,90 +59,7 @@
 		<!-- Page content --> 
 		<div class="content" id="dataDiv">
 			 
-<div style="margin-top: 1%;"> 
-		  <div class="form-row">
-		    <div class="form-group col-md-4">
-		      <label for="fName">First Name</label>
-		      <input type="text" class="form-control" id="fName" name = "firstName">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="mName">Middle Name</label>
-		      <input type="text" class="form-control" id="mName" name="middleName">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="lName">Last Name</label>
-		      <input type="text" class="form-control" id="lName" name="lastName" >
-		    </div>
-		  </div> 
-		
-		  <div class="form-row">
-		  	<div class="form-group col-md-2">
-		      <label for="dateOfBirth">Date of Birth</label>
-			  <input class="form-control" type="text" id="dateOfBirth" name="dob">
-			</div> 
-		    <div class="form-group col-md-4">
-		      <label for="inputEmail">Email as User Name</label>
-		      <input type="email" class="form-control" id="inputEmail" name="email" >
-		    </div>
-		    <div class="form-group col-md-3">
-		      <label for="inputPassword">Password for ProcKart</label>
-		      <input type="password" class="form-control" id="inputPassword" name="password" >
-		    </div>
-		    <div class="form-group col-md-3">
-		      <label for="confirmPassword">Confirm Password</label>
-		      <input type="password" class="form-control" id="confirmPassword" name="password">
-		    </div>
-		  </div>
-		  
-		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="phone1">Phone #</label>
-		      <input type="text" value="10"  class="form-control" id="phone1" name="phone1">
-		    </div>
-		    <div class="form-group col-md-6">
-		      <label for="phone2">Alternate Phone #</label>
-		      <input type="text" value="10"  class="form-control" id="phone2" name="phone2" >
-		    </div>
-		  </div>
-		  
-		  <div class="form-group">
-		    <label for="addressLine1">Address Line1</label>
-		    <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Apartment, studio, or floor">
-		  </div>
-		  <div class="form-group">
-		    <label for="addressLine2">Address Line 2</label>
-		    <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Street, locality">
-		  </div>
-		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="city">City</label>
-		      <input type="text" class="form-control" id="city" name="city">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="state">State</label>
-		      <input type="text" class="form-control" id="state" name="state">
-		    </div>
-		    <div class="form-group col-md-2">
-		      <label for="zip">Zip</label>
-		      <input type="text" class="form-control" id="zip" name="zip">
-		    </div>
-		  </div>
-		   
-		  <div class="form-group">
-		    <label for="landmark">Landmark</label>
-		    <input type="text" class="form-control" id="landmark" name="landmark" placeholder="Landmark">
-		  </div>
-		  
-		  <div class="form-group"  style="display: none;">
-		    <div class="form-check">
-		      <input class="form-check-input" type="checkbox" id="gridCheck">
-		      <label class="form-check-label" for="gridCheck">
-		        Check me out
-		      </label>
-		    </div>
-		  </div>
-		  <button type="button" id="submit" class="btn btn-primary">Register</button> 
-		  
+  
 		  
 </div>   
 		<hr/>
@@ -136,7 +70,10 @@
 		</div>
 	 
 	 <script type="text/javascript">
-	 jQuery(document).ready(function($) {
+
+	 
+	 
+	/* jQuery(document).ready(function($) {
 		 
 			$("#submit").click(function(){
 				var customerData = {};
@@ -159,7 +96,7 @@
 				});
 			});
 	 
-		});
+		});*/
 	 </script>	
 	</body>
 </html>
